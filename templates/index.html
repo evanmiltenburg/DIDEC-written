@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Written Descriptions</title>
+
+<style>
+body {
+    background-color: linen;
+    font-family: sans-serif;
+}
+
+div.header {
+    text-align: center;
+}
+
+div.content {
+    margin-top:50px;
+}
+
+h1 {
+    color: maroon;
+}
+
+table {
+    margin: auto;
+    border-spacing: 0px 10px;
+}
+
+</style>
+
+<script>
+document.onkeydown = function (e) {
+  e = e || window.event;
+  var charCode = (e.charCode) ? e.charCode : e.keyCode;
+
+  if (charCode == 37) {
+      {% if previous %}
+        window.location.assign("/images/{{previous}}");
+      {% else %}
+        alert('You are already on the first page.')
+      {% endif %}
+  }
+  else if (charCode == 39) {
+      {% if next %}
+        window.location.assign("/images/{{next}}");
+      {% else %}
+        alert('You have reached the final page.')
+      {% endif %}
+  }
+};
+</script>
+
+</head>
+<body>
+<div class="header">
+<h1>Written descriptions</h1>
+
+{% if previous %} <a href='/images/{{previous}}'>Previous</a> {% else %} Previous {% endif %} -
+{% if next %} <a href='/images/{{next}}'>Next</a> {% else %} Next {% endif %}
+</div>
+
+<div class="content">
+<center>
+COCO-id: {{coco_id}}, Visual Genome: {{vg_id}}<br/>
+<img src="/static/COCO-images/{{filename}}" height="300px">
+</center>
+    <table>
+    <tr><th>Participant</th><th>Description</th></tr>
+    {% for participant, description in descriptions %}
+        <tr><td valign="top">{{participant}}</td><td>{{description}}</td></tr>
+    {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

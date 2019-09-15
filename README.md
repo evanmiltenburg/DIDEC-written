@@ -1,7 +1,17 @@
 # Results viewer
 
-This folder contains a viewer tool for the written image descriptions.
-This tool allows you to look through the images and their descriptions in your browser.
+This folder contains a viewer tool for written Dutch image descriptions, collected for our replication paper: *On task effects in NLG corpus elicitation: a replication study using mixed effects modeling*. This tool allows you to look through the images and their descriptions in your browser.
+
+If you use this code or data, please cite:
+
+```
+@inproceedings{miltenburg2019task,
+	Author = {Emiel van Miltenburg and Merel van de Kerkhof and Ruud Koolen and Martijn Goudbeek and Emiel Krahmer},
+	Booktitle = {Proceedings of the 12th International Conference on Natural Language Generation},
+	Publisher = {ACL},
+	Title = {On task effects in NLG corpus elicitation: a replication study using mixed effects modeling},
+	Year = {2019}}
+```
 
 ## Requirements
 
